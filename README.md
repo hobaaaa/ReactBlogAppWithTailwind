@@ -21,4 +21,4 @@ Bu proje, Next.js kullanarak basit bir blog uygulaması oluşturmanızı sağlar
 
 ---
 
-Herhangi bir sorun veya katkı öneriniz varsa, lütfen [GitHub İssues](https://github.com/kullanici_adiniz/blog-app-nextjs/issues) sayfasından bana ulaşın.
+Herhangi bir sorun veya katkı öneriniz varsa, lütfen [GitHub İssues](https://github.com/hobaaaa/blog-app-nextjs/issues) sayfasından bana ulaşın.

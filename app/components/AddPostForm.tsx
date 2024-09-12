@@ -36,7 +36,7 @@ const AddPostForm = () => {
   return (
     <form onSubmit={handleSubmit} className="mt-4">
       <div className="mb-4">
-        <label className="block text-sm font-medium" htmlFor="title">
+        <label className="block text-lg font-bold" htmlFor="title">
           Başlık:
         </label>
         <input
@@ -49,7 +49,7 @@ const AddPostForm = () => {
         />
       </div>
       <div className="mb-4">
-        <label className="block text-sm font-medium" htmlFor="content">
+        <label className="block text-lg font-bold" htmlFor="content">
           İçerik:
         </label>
         <textarea

@@ -2,9 +2,11 @@ import AddPostForm from "../components/AddPostForm";
 
 const NewPostPage = () => {
   return (
-    <div className="container p-4 mx-auto pt-24">
-      <h1 className="text-2xl font-bold">Yeni Blog Yazısı Ekle</h1>
-      <AddPostForm />
+    <div className="container  text-center pt-[6rem] mx-auto">
+      <div className="my-2 bg-gray-200 p-4 rounded ">
+        <h1 className="text-3xl font-bold">Yeni Blog</h1>
+        <AddPostForm />
+      </div>
     </div>
   );
 };

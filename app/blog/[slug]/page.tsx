@@ -21,10 +21,12 @@ export default function Post({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="container bg-gray-200 p-4 mx-auto grid justify-center text-center pt-[90px]">
-      <h1 className="text-4xl font-bold my-5">{post.title}</h1>
-      <h2 className="text-xl my-3">{post.date}</h2>
-      <div className="text-xl">{post.content}</div>
+    <div className="container  text-center pt-[6rem] mx-auto">
+      <div className="my-2 bg-gray-200 p-4 rounded ">
+        <h1 className="text-4xl font-bold my-5">{post.title}</h1>
+        <h2 className="text-xl my-3">{post.date}</h2>
+        <div className="text-xl">{post.content}</div>
+      </div>
     </div>
   );
 }

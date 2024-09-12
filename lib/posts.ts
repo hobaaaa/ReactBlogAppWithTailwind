@@ -1,48 +1,25 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import fs from 'fs';
+import path from 'path';
 
-const postsDirectory = path.join(process.cwd(), "app/blog/posts");
+const postsDirectory = path.join(process.cwd(), 'app/data');
 
-export function getAllPosts() {
-    const fileNames = fs.readdirSync(postsDirectory);
-    const allPostsData = fileNames.map((fileName) => {
-        const slug = fileName.replace(/\.mdx$/, "");
-        const fullPath = path.join(postsDirectory, fileName);
-        const fileContents = fs.readFileSync(fullPath, "utf8");
-        const { data, content } = matter(fileContents);
-
-        const frontmatter = data as {
-            title: string;
-            date: string;
-        };
-
-        return {
-            slug,
-            content,
-            title: frontmatter.title,
-            date: frontmatter.date,
-        };
-    });
-    return allPostsData.sort(
-        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-    );
+export interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  content: string;
 }
 
-export function getPostBySlug(slug: string) {
-  const fullPath = path.join(postsDirectory, `${slug}.mdx`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
+export function getAllPosts(): BlogPost[] {
+  const filePath = path.join(postsDirectory, 'posts.json');
+  const fileContents = fs.readFileSync(filePath, 'utf8');
+  const posts = JSON.parse(fileContents) as BlogPost[];
+  return posts.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+}
 
-  const frontmatter = data as {
-      title: string;
-      date: string;
-  };
-
-  return {
-    slug,
-    content,
-    title: frontmatter.title,
-    date: frontmatter.date,
-  };
+export function getPostBySlug(slug: string): BlogPost | undefined {
+  const allPosts = getAllPosts();
+  return allPosts.find(post => post.slug === slug);
 }

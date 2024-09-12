@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "my-first-post",
+    "title": "My First Post",
+    "date": "2024-09-11",
+    "content": "This is the content of my first blog post."
+  },
+  {
+    "slug": "another-post",
+    "title": "Another Post",
+    "date": "2024-09-11",
+    "content": "This is some content for another blog post."
+  },
+  {
+    "slug": "denizin-ilk-blogu",
+    "title": "Deniz'in ilk bloğu.",
+    "date": "2024-09-12",
+    "content": "Bu benim ilk bloğumdur. Biraz daha CSS yazıp  portfolyoma ekleyeceğim."
+  },
+  {
+    "slug": "dededede",
+    "title": "dededede",
+    "date": "2024-09-12",
+    "content": "dedddddddddddddddddddddddddddddddddddd"
+  }
+]

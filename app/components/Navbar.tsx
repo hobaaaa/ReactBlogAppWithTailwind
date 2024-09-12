@@ -18,6 +18,11 @@ const Navbar = () => {
       link: "../blog",
       title: "Blogs",
     },
+    {
+      id: 3,
+      link: "../new-post",
+      title: "New Blog",
+    },
   ];
 
   return (

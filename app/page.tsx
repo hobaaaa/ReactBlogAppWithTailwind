@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="container  text-center pt-[6rem] mx-auto">
-      <div className="my-2 bg-gray-200 p-4 rounded ">
+      <div className="mx-2 md:mx-0 my-2 bg-gray-200 p-4 rounded ">
         <h1 className="text-4xl font-bold my-5">Hoş Geldiniz!</h1>
         <p className="text-xl my-3">Bu benim kişisel blogum.</p>
         <Link href="/blog" className="mt-3">

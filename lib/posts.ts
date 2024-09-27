@@ -8,6 +8,7 @@ export interface BlogPost {
   title: string;
   date: string;
   content: string;
+  image:string;
 }
 
 export function getAllPosts(): BlogPost[] {

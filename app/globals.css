@@ -16,7 +16,14 @@
   }
 }
 
-body {}
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  background-image: url("../public/1964.jpg");
+}
 
 @layer utilities {
   .text-balance {

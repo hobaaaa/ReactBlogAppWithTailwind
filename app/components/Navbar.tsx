@@ -11,17 +11,17 @@ const Navbar = () => {
     {
       id: 1,
       link: "/",
-      title: "Home",
+      title: "Anasayfa",
     },
     {
       id: 2,
       link: "../blog",
-      title: "Blogs",
+      title: "Bloglarım",
     },
     {
       id: 3,
       link: "../new-post",
-      title: "New Blog",
+      title: "Yeni blog",
     },
   ];
 

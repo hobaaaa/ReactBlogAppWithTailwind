@@ -1,6 +1,11 @@
 import Link from "next/link";
+import { getAllPosts } from "@/lib/posts";
+import BlogCard from "./components/BlogCard";
+import styles from "./styles/BlogCard.module.css";
 
 export default function Home() {
+  const posts = getAllPosts().slice(0, 4);
+
   return (
     <div className="container  text-center pt-[6rem] mx-auto">
       <div className="mx-2 md:mx-0 my-2 bg-gray-200 p-4 rounded ">
@@ -11,6 +16,11 @@ export default function Home() {
             Blog Yazıları
           </button>
         </Link>
+        <div className={`${styles.card__body}`}>
+          {posts.map((post) => (
+            <BlogCard key={post.slug} {...post} />
+          ))}
+        </div>
       </div>
     </div>
   );

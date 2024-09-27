@@ -5,18 +5,24 @@ import { slugify } from "@/lib/slugify"; // Slug oluşturma fonksiyonunu import 
 const AddPostForm = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [image, setImage] = useState<File | null>(null); // Image state
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
       const slug = slugify(title); // Slug oluştur
 
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("content", content);
+      formData.append("slug", slug);
+      if (image) {
+        formData.append("image", image); // Image'ı ekle
+      }
+
       const response = await fetch("/api/create-post", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ title, content, slug }), // Slug'ı API isteğine ekle
+        body: formData, // FormData kullan
       });
 
       if (!response.ok) {
@@ -25,9 +31,9 @@ const AddPostForm = () => {
 
       const result = await response.json();
       console.log(result.message); // Başarı mesajını yazdır
-      // Formu sıfırla veya kullanıcıya başarı mesajı göster
       setTitle("");
       setContent("");
+      setImage(null); // Formu sıfırla
     } catch (error) {
       console.error("Error:", error);
     }
@@ -59,6 +65,18 @@ const AddPostForm = () => {
           className="mt-1 block w-full p-2 border border-gray-300 rounded"
           rows={5}
           required
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block text-lg font-bold" htmlFor="image">
+          Resim Yükle:
+        </label>
+        <input
+          id="image"
+          type="file"
+          accept="image/*"
+          onChange={(e) => setImage(e.target.files?.[0] || null)}
+          className="mt-1 block w-full p-2 border border-gray-300 rounded"
         />
       </div>
       <button

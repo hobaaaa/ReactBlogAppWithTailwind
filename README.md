@@ -20,8 +20,7 @@ This project enables you to create a simple blog application using Next.js. The 
 
 ---
 
-If you have any issues or suggestions for improvement, please reach out to me on the [GitHub İssues](https://github.com/hobaaaa/ReactBlogAppWithTailwind
-/issues) page.
+If you have any issues or suggestions for improvement, please reach out to me on the [GitHub İssues](https://github.com/hobaaaa/ReactBlogAppWithTailwind/issues) page.
 
 
 
@@ -48,5 +47,4 @@ Bu proje, Next.js kullanarak basit bir blog uygulaması oluşturmanızı sağlar
 
 ---
 
-Herhangi bir sorun veya katkı öneriniz varsa, lütfen [GitHub İssues](https://github.com/hobaaaa/ReactBlogAppWithTailwind
-/issues) sayfasından bana ulaşın.
+Herhangi bir sorun veya katkı öneriniz varsa, lütfen [GitHub İssues](https://github.com/hobaaaa/ReactBlogAppWithTailwind/issues) sayfasından bana ulaşın.
